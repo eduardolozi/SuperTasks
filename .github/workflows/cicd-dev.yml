@@ -9,8 +9,8 @@ on:
       - develop
 
 jobs: 
-  build-application:
-    name: Builds the .NET Application
+  build-and-test:
+    name: Build and Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,15 +22,5 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore
-  
-  test-application:
-    name: Running the application testes
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
-      - name: Run unit tests
-        run: dotnet test ./SuperTasks.Tests/SuperTasks.Tests.csproj --no-build
+      - name: Run tests
+        run: dotnet test --no-build
