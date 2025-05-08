@@ -33,4 +33,4 @@ jobs:
         with:
           dotnet-version: '8.0.x'
       - name: Run unit tests
-        run: dotnet test --no-build
+        run: dotnet test ./SuperTasks.Testes/SuperTasks.Tests.csproj --no-build
