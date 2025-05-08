@@ -12,7 +12,6 @@ jobs:
   build-application:
     name: Builds the .NET Application
     runs-on: ubuntu-latest
-    permissions: 
       
     steps:
       - uses: actions/checkout@v4
