@@ -6,5 +6,9 @@ namespace SuperTasks.API.Controllers;
 [ApiController]
 public class TaskController : ControllerBase
 {
-    
+    [HttpGet]
+    public ActionResult Get()
+    {
+        return Ok();
+    }
 }
