@@ -9,10 +9,9 @@ on:
       - develop
 
 jobs: 
-  build-application:
-    name: Builds the .NET Application
+  build-and-test:
+    name: Build and Test
     runs-on: ubuntu-latest
-      
     steps:
       - uses: actions/checkout@v4
       - name: Setup dotnet
@@ -23,5 +22,5 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore
-      - name: Test
+      - name: Run tests
         run: dotnet test --no-build

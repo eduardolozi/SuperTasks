@@ -7,13 +7,19 @@ namespace SuperTasks.API.Controllers;
 public class TaskController : ControllerBase
 {
     [HttpGet]
-    public ActionResult GetAll()
+    public ActionResult<List<Task>> GetAll()
     {
         return Ok();
     }
     
     [HttpPost]
     public ActionResult Create()
+    {
+        return Ok();
+    }
+    
+    [HttpDelete]
+    public ActionResult Delete()
     {
         return Ok();
     }
