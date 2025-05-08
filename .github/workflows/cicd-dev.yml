@@ -12,10 +12,12 @@ jobs:
   build-application:
     name: Builds the .NET Application
     runs-on: ubuntu-latest
+    permissions: 
+      
     steps:
-      - uses: actions/chekout@v4
+      - uses: actions/checkout@v4
       - name: Setup dotnet
-      - uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v4
         with: 
           dotnet-version: '8.0.x'
       - name: Restore Packages
