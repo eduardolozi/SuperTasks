@@ -12,6 +12,12 @@ public class TaskController : ControllerBase
         return Ok();
     }
     
+    [HttpGet("{id}")]
+    public ActionResult<Task> GetById([FromRoute] int id)
+    {
+        return Ok();
+    }
+    
     [HttpPost]
     public ActionResult Create()
     {
