@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SuperTasks.Domain.Models;
+using Task = System.Threading.Tasks.Task;
 
 namespace SuperTasks.API.Controllers;
 
@@ -7,14 +9,20 @@ namespace SuperTasks.API.Controllers;
 public class TaskController : ControllerBase
 {
     [HttpGet]
-    public ActionResult GetAll()
+    public ActionResult<List<Task>> GetAll()
     {
-        return Ok();
+        return Oks();
     }
     
     [HttpPost]
     public ActionResult Create()
     {
-        return Okb();
+        return Ok();
+    }
+    
+    [HttpDelete]
+    public ActionResult Delete()
+    {
+        return Ok();
     }
 }
