@@ -11,6 +11,12 @@ public class TaskController : ControllerBase
     {
         return Ok();
     }
+
+    [HttpPatch("{id}")]
+    public ActionResult Update([FromRoute] int id, [FromBody] Task task)
+    {
+        return Ok();
+    }
     
     [HttpGet("{id}")]
     public ActionResult<Task> GetById([FromRoute] int id)
