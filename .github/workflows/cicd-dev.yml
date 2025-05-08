@@ -34,4 +34,3 @@ jobs:
           dotnet-version: '8.0.x'
       - name: Run unit tests
         run: dotnet test --no-build
-        working-directory: ./SuperTasks.Tests
