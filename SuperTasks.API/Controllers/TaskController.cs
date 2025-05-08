@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SuperTasks.Domain.Models;
-using Task = System.Threading.Tasks.Task;
 
 namespace SuperTasks.API.Controllers;
 
