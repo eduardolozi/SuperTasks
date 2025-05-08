@@ -9,7 +9,7 @@ public class TaskController : ControllerBase
     [HttpGet]
     public ActionResult<List<Task>> GetAll()
     {
-        return Oks();
+        return Ok();
     }
     
     [HttpPost]
