@@ -15,6 +15,6 @@ public class TaskController : ControllerBase
     [HttpPost]
     public ActionResult Create()
     {
-        return Okb();
+        return Ok();
     }
 }
