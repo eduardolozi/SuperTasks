@@ -1,0 +1,24 @@
+name: Develop CI-CD
+on:
+  push:
+    branches: [main, develop]
+
+  pull_request: 
+    branches: [main, develop]
+
+jobs: 
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with: 
+          dotnet-version: '8.0.x'
+      - name: Restore Packages
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --no-restore
+      - name: Run tests
+        run: dotnet test --no-build
