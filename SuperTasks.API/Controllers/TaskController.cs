@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SuperTasks.Application.Interfaces;
 
 namespace SuperTasks.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class TaskController : ControllerBase
+public class TaskController(ITaskService taskService) : ControllerBase
 {
     [HttpGet]
     public ActionResult<List<Task>> GetAll()
