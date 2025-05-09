@@ -10,7 +10,7 @@ public class TaskController(ITaskService taskService) : ControllerBase
     [HttpGet]
     public ActionResult<List<Task>> GetAll()
     {
-        return Ok();
+        return Ok(new List<Task>());
     }
 
     [HttpPatch("{id}")]
