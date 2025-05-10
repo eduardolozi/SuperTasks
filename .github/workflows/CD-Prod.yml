@@ -25,4 +25,5 @@ jobs:
 
       - name: Trigger deploy on Render
         run: |
-          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+          VERSION_TAG=${{ github.ref_name }}
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}&tag=${VERSION_TAG}"
