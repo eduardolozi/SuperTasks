@@ -8,9 +8,10 @@ namespace SuperTasks.API.Controllers;
 public class TaskController(ITaskService taskService) : ControllerBase
 {
     [HttpGet]
-    public ActionResult<List<Task>> GetAll()
+    public async Task<ActionResult<List<Task>>> GetAll()
     {
-        return Ok(new List<Task>());
+        var tasks = await taskService.GetAll();
+        return Ok(tasks);
     }
 
     [HttpPatch("{id}")]
@@ -26,9 +27,17 @@ public class TaskController(ITaskService taskService) : ControllerBase
     }
     
     [HttpPost]
-    public ActionResult Create()
+    public async Task<ActionResult> Create([FromBody] Domain.Models.Task task)
     {
-        return Ok("Certo");
+        try
+        {
+            await taskService.Create(task);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message, ex);
+        }
     }
     
     [HttpDelete]
