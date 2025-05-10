@@ -10,7 +10,6 @@ public class TaskController(ITaskService taskService) : ControllerBase
     [HttpGet]
     public ActionResult<List<Task>> GetAll()
     {
-        var x = 2;
         return Ok(new List<Task>());
     }
 
@@ -29,7 +28,7 @@ public class TaskController(ITaskService taskService) : ControllerBase
     [HttpPost]
     public ActionResult Create()
     {
-        return Ok();
+        return Ok("Certo");
     }
     
     [HttpDelete]
