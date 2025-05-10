@@ -27,4 +27,4 @@ jobs:
         run: |
           IMAGE_URL="docker.io/eduardoway/supertasks:${{ github.ref_name }}"
           ENCODED_IMAGE_URL=$(echo $IMAGE_URL | jq -sRr @uri)
-          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}&imageUrl=${ENCODED_IMAGE_URL}"
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}&imgUrl=${ENCODED_IMAGE_URL}"
