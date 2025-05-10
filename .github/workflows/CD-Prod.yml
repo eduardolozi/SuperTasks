@@ -22,3 +22,7 @@ jobs:
         run: |
           VERSION_TAG=${{ github.ref_name }}
           docker push "${{ secrets.DOCKER_USERNAME }}/supertasks:${VERSION_TAG}"
+
+      - name: Trigger deploy on Render
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
