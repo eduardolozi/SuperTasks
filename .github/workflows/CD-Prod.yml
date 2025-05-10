@@ -26,7 +26,7 @@ jobs:
       - name: Trigger deploy on Render
         run: |
           IMAGE_URL="docker.io/${{ secrets.DOCKER_USERNAME }}/supertasks:${{ github.ref_name }}"
-          ENCODED_IMAGE_URL=$(echo "$IMAGE_URL" | jq -sRr @uri)
+          ENCODED_IMAGE_URL=$(echo -n "$IMAGE_URL" | jq -sRr @uri)
            echo "Deploying image: $IMAGE_URL"
           echo "Encoded: $ENCODED_IMAGE_URL"
           curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}&imgURL=${ENCODED_IMAGE_URL}"
