@@ -29,4 +29,4 @@ jobs:
           ENCODED_IMAGE_URL=$(echo "$IMAGE_URL" | jq -sRr @uri)
            echo "Deploying image: $IMAGE_URL"
           echo "Encoded: $ENCODED_IMAGE_URL"
-          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}&imgUrl=${ENCODED_IMAGE_URL}"
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}&imgURL=${ENCODED_IMAGE_URL}"
