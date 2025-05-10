@@ -1,10 +1,10 @@
 name: CD-Dev
 on:
   push:
-    branch: [develop]
+    branches: [develop]
 
 jobs:
-  deploy-prod:
+  deploy-dev:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
