@@ -25,5 +25,6 @@ jobs:
 
       - name: Trigger deploy on Render
         run: |
-          VERSION_TAG=${{ github.ref_name }}
-          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}&tag=${VERSION_TAG}"
+          IMAGE_URL="docker.io/eduardoway/supertasks:${{ github.ref_name }}"
+          IMAGE_URL=$(echo $IMAGE_URL | jq -sRr @uri)
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}&imageUrl=${IMAGE_URL}"
